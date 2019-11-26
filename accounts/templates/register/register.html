@@ -1,1 +1,29 @@
-{{form}}
+<form action="" method="post" class="user">
+    {%csrf_token%}
+
+<tr><th><label for="id_username">User ID:</label></th><td><input type="text" name="username" required id="id_username"></td></tr>
+<tr><th><label for="id_email">E-mail:</label></th><td><input type="email" name="email" required id="id_email"></td></tr>
+<tr><th><label for="id_school">School:</label></th><td><select name="school" id="id_school">
+  <option value="고려대학교" selected>고려대학교</option>
+
+  <option value="국민대학교">국민대학교</option>
+
+  <option value="동덕여자대학교">동덕여자대학교</option>
+
+  <option value="서경대학교">서경대학교</option>
+
+  <option value="성신여자대학교">성신여자대학교</option>
+
+  <option value="한국예술종합학교">한국예술종합학교</option>
+
+  <option value="한성대학교">한성대학교</option>
+
+</select></td></tr>
+<tr><th><label for="id_realname">Name:</label></th><td><input type="text" name="realname" required id="id_realname"></td></tr>
+<tr><th><label for="id_password">Password:</label></th><td><input type="password" name="password" required id="id_password"></td></tr>
+<tr><th><label for="id_password2">Repeat Password:</label></th><td><input type="password" name="password2" required id="id_password2"></td></tr>
+                                <hr><br/>
+
+                                <input type="submit" value="Register" class="btn btn-dark btn-user btn-block">
+
+                            </form>
