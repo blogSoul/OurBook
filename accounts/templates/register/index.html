@@ -15,16 +15,16 @@
 	<div class="padding-all">
 		<div class="header">
 			<h1>전공에 더 가까이_</h1> 
-			<h2>OurBook_</h2>
 		</div>
 
 		<div class="design-w3l">
 			<div class="mail-form-agile">
-				<form action="#" method="post">
-					<input type="text" name="name" placeholder="User Name  or  email..." required=""/>
-					<input type="password"  name="password" class="padding" placeholder="Password" required=""/>
+				<form action="{% url 'login' %}" method="post">
+					{% csrf_token %}
+					<input type="text" name="username" autofocus required id="id_username">
+					<input type="password" name="password" required id="id_password">
+					<br/><br/>
 					<input type="submit" value="login">
-					<a href="#" 
 				</form>
 			</div>
 		  <div class="clear"> </div>

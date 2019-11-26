@@ -13,3 +13,4 @@ def register(request):
         user_form = RegisterForm()
 
     return render(request, 'register/register.html', {'form':user_form})
+

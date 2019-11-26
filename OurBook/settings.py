@@ -73,6 +73,10 @@ DATABASES = {
 # Application definition
 AUTH_USER_MODEL='accounts.MyUser'
 
+# Login Redirect 
+LOGIN_REDIRECT_URL = '/main'
+
+
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
