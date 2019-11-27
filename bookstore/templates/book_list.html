@@ -3,7 +3,7 @@
 
   <!-- bradcam_area_start -->
   <div class="bradcam_area breadcam_bg">
-      <h3>single blog</h3>
+      <h3>책 검색</h3>
   </div>
   <!-- bradcam_area_end -->
 
@@ -14,16 +14,15 @@
                 <div class="col-xl-10 offset-xl-1 col-md-12">
                     <form method="post" action="{% url 'books' %}">
                     {% csrf_token %}
-                        <input class="Query_border" size="80%" placeholder="책 제목, 저자, ISBN 입력" aria-label="Search" name="book_search">
+                        <!-- 반응형 input으로 바꾸어야 함 -->
+                        <input class="Query_border" size="80" placeholder="책 제목, 저자, ISBN 입력" aria-label="Search" name="book_search">
                         <input class="Query_border" type="submit" style="background-color:#009DFF;" placeholder="검색">
                     </form> 
                 </div>
             </div>
-
         </div>
     </div>
     <!-- forQuery_end-->
-
 
 
 {% endblock%}

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 import urllib.request
+import json
 
 def books(request):
     
@@ -46,10 +47,16 @@ def books_list(request):
         if(rescode==200):
             response_body = response.read()
             # print(response_body.decode('utf-8'))
-            final_res = response_body
+
+            json_rt = response_body.decode('utf-8')
+            final_res = json.loads(json_rt)
+            return render(request, 'books.html', {'final_res':final_res})
+        
         else:
             # print("Error Code:" + rescode)
             final_res = rescode
+
+        final_res = final_res.decode('utf-8')
 
         return render(request, 'books.html', {'final_res':final_res})
 

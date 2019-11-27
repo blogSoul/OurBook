@@ -1,11 +1,24 @@
-<!DOCTYPE html>
-<html>
-
 <head>
-    <title>OurBook</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8">
 </head>
-<body>
-{{final_res.decode}}
+{% extends 'base.html' %}
+{% block content %}
+
+  <div class="bradcam_area breadcam_bg">
+      <h3>책 검색</h3>
+  </div>
 </body>
+
+{% for x in final_res.items %}
+{{x.title|safe }}<br/>
+<a href="{{x.link|safe}}">자세히 보기 (링크)</a><br/>
+<img src="{{x.image}}"><br/>
+{{x.author|safe}}<br/>
+{{x.price|safe}}<br/>
+{{x.publisher|safe}}<br/>
+{{x.isbn|safe}}<br/>
+{{x.description|safe}}<br/>
+<br/><br/>
+
+{%endfor%}
+{% endblock %}
