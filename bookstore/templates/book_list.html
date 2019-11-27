@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <!-- bradcam_area_start -->
+  <div class="bradcam_area breadcam_bg">
+      <h3>single blog</h3>
+  </div>
+  <!-- bradcam_area_end -->
+
+    <!-- forQuery_start -->
+    <div class="forQuery">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1 col-md-12">
+                    <form method="post" action="{% url 'books' %}">
+                    {% csrf_token %}
+                        <input class="Query_border" size="80%" placeholder="책 제목, 저자, ISBN 입력" aria-label="Search" name="book_search">
+                        <input class="Query_border" type="submit" style="background-color:#009DFF;" placeholder="검색">
+                    </form> 
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- forQuery_end-->
+
+
+
+{% endblock%}
