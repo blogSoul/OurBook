@@ -42,8 +42,8 @@
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="index.html">home</a></li>
-                                        <li><a href="about.html">About</a></li>
+                                        <li><a class="active" href="{% url 'home' %}">home</a></li>
+                                        <li><a href="{% url 'about' %}">About</a></li>
                                         <li><a href="#">Share <i class="ti-angle-down"></i></a>
                                             <ul class="submenu">
                                                 <li><a href="{% url 'books' %}">책</a></li>
@@ -56,7 +56,7 @@
                                                 <li><a href="elements.html">elements</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact.html">고객센터</a></li>
+                                        <li><a href="{% url 'contact' %}">고객센터</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -64,7 +64,7 @@
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
                                 <a href="index.html">
-                                    <img src="img/logo.png" alt="">
+                                    <img src="/static/img/logo.png" alt="">
                                 </a>
                             </div>
                         </div>
@@ -195,45 +195,18 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- link that opens popup -->
 
     <!-- form itself end-->
-        <form id="test-form" class="white-popup-block mfp-hide">
+        <form id="test-form" method="post" class="white-popup-block mfp-hide">
+                {% csrf_token %}
                 <div class="popup_box ">
                         <div class="popup_inner">
-                            <h3>Check Availability</h3>
-                            <form action="#">
+                            <h3>책 검색</h3>
                                 <div class="row">
-                                    <div class="col-xl-6">
-                                        <input id="datepicker" placeholder="Check in date">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <input id="datepicker2" placeholder="Check out date">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <select class="form-select wide" id="default-select" class="">
-                                            <option data-display="Adult">1</option>
-                                            <option value="1">2</option>
-                                            <option value="2">3</option>
-                                            <option value="3">4</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <select class="form-select wide" id="default-select" class="">
-                                            <option data-display="Children">1</option>
-                                            <option value="1">2</option>
-                                            <option value="2">3</option>
-                                            <option value="3">4</option>
-                                        </select>
-                                    </div>
                                     <div class="col-xl-12">
-                                        <select class="form-select wide" id="default-select" class="">
-                                            <option data-display="Room type">Room type</option>
-                                            <option value="1">Laxaries Rooms</option>
-                                            <option value="2">Deluxe Room</option>
-                                            <option value="3">Signature Room</option>
-                                            <option value="4">Couple Room</option>
-                                        </select>
+                                        <input class="form-select wide" id="default-select" placeholder="책 제목, 저자, ISBN 검색" name="search">
                                     </div>
+                                    <br/><br/><br/>
                                     <div class="col-xl-12">
-                                        <button type="submit" class="boxed-btn3">Check Availability</button>
+                                        <button type="submit" class="boxed-btn3">Search</button>
                                     </div>
                                 </div>
                             </form>
@@ -285,9 +258,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
         });
     </script>
-
-
-
 </body>
 
 </html>
