@@ -1,34 +1,57 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import urllib.request
 import json
 from django.urls import reverse_lazy
 
+from django.utils import timezone
+from django.views.generic.list import ListView # 데이터 보여주기
+from django.views.generic.detail import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView #데이터 추가
+from .models import Product
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+################ Book Product CRUD ############################################3
+
+class BookList(LoginRequiredMixin, ListView):
+    login_url = '/'
+    redirect_field_name = '/'
+
+    model = Product
+    paginate_by = 10
+
+class BookCreate(LoginRequiredMixin, CreateView):
+    login_url = '/'
+    redirect_field_name = '/'
+
+    model = Product
+    fields = ['book', 'note', 'ex_type', 'state', 'exc_method']
+    success_url = reverse_lazy('book_list')
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)    
+
+class BookDetail(LoginRequiredMixin, DetailView):
+    login_url = '/'
+    redirect_field_name = '/'
+    model = Product
+
+class BookUpdate(LoginRequiredMixin, UpdateView):
+    login_url = '/'
+    redirect_field_name = '/'
+    model = Product
+    fields = ['book', 'note', 'ex_type', 'state', 'exc_method']
+    success_url = reverse_lazy('book_list')
+
+class BookDelete(LoginRequiredMixin, DeleteView):
+    login_url = '/'
+    redirect_field_name = '/'
+    model = Product
+    success_url = reverse_lazy('book_list')
+
+#############################################################3
 
 def books(request):
-    
-    client_id = "CJNbcDFvgOnPbjtdXxA_"  # Client-Id
-    client_secret = "6EdIJ7Pe2d"        # Client-Secret
-    encText = urllib.parse.quote("파이썬")
-    
-    url = "https://openapi.naver.com/v1/search/book?query=" + encText +"&display=3&sort=count" # 우선은 3씩, 판매량 순
-    request_content = urllib.request.Request(url)
-    
-    request_content.add_header("X-Naver-Client-Id", client_id)
-    request_content.add_header("X-Naver-Client-Secret", client_secret)
-    response = urllib.request.urlopen(request_content)
-    rescode = response.getcode()
-    
-    if(rescode==200):
-        response_body = response.read()
-        # print(response_body.decode('utf-8'))
-        final_res = response_body
-    else:
-        # print("Error Code:" + rescode)
-        final_res = rescode
-
-    return render(request, 'books.html', {'final_res':final_res})
-
-def books_list(request):
 
     if request.method == 'POST':
         

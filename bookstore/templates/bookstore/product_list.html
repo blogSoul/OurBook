@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <!-- bradcam_area_start -->
+  <div class="bradcam_area breadcam_bg">
+      <h3>전공책 공유</h3>
+  </div>
+  <!-- bradcam_area_end -->
+  올라온 책들 목록 쭉 보여주기 <br/><br/><br/>
+  <a href="{%url 'book_create'%}">새책 등록 </a>
+  {% for product in object_list%}
+    {{product.user}}<br/>
+    {{product.book}}<br/>
+    {{product.state}}<br/>
+    {{product.ex_type}}<br/>
+  {% endfor %}     
+  
+{% endblock %}

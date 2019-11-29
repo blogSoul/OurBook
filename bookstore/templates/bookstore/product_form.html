@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <!-- bradcam_area_start -->
+  <div class="bradcam_area breadcam_bg">
+      <h3>책 검색</h3>
+  </div>
+  <!-- bradcam_area_end -->
+    책 : {{form.book}}<br/>
+    메모 : {{form.note}}<br/>
+    거래 방식 : {{form.ex_type}}<br/>
+    (올린 사람만 변경) 상태 : {{form.state}}<br/>
+    거래 방법 : {{form.exec_method}}<br/>
+{% endblock%}
