@@ -8,7 +8,7 @@
 <a href="https://github.com/kangtegong/OurBook#%EB%AC%B8%EC%A0%9C%EC%9D%98%EC%8B%9D"> 2. 문제의식</a>    
 <a href="https://github.com/kangtegong/OurBook#%EC%82%AC%EC%9A%A9%EC%82%AC%EB%A1%80">3. 사용사례</a>   
 <a href="https://github.com/kangtegong/OurBook#%EC%82%AC%EC%9A%A9%EA%B8%B0%EC%88%A0-%EB%B0%8F-%EC%84%A4%EC%B9%98">4. 사용기술</a>    
-<a href="">5. DB 설계 및 코드 해설</a>
+<a href="https://github.com/kangtegong/OurBook#db-%EC%84%A4%EA%B3%84-%EB%B0%8F-%EC%BD%94%EB%93%9C-%ED%95%B4%EC%84%A4">5. DB 설계 및 코드 해설</a>
 
 ## 요약
 
