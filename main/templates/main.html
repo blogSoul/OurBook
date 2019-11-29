@@ -4,54 +4,32 @@
     <!-- slider_area_start -->
     <div class="slider_area">
         <div class="slider_active owl-carousel">
+            
             <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="slider_text text-center">
-                                <h3>Montana Resort</h3>
-                                <p>Unlock to enjoy the view of Martine</p>
+                                <h3>Book Share</h3>
+                                <p>버려지는 비싼 전공책, 이제는 나누세요</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+           
             <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">
                 <div class="container">
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="slider_text text-center">
-                                <h3>Life is Beautiful</h3>
-                                <p>Unlock to enjoy the view of Martine</p>
+                                <h3>Solution Share</h3>
+                                <p>답이 없는 문제, 이제는 고민하지 마세요</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="slider_text text-center">
-                                <h3>OurBook</h3>
-                                <p>P2P 전공서적 공유 플랫폼</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="slider_text text-center">
-                                <h3>Solutions</h3>
-                                <p>솔루션 공유 플랫폼</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div>            
         </div>
     </div>
     <!-- slider_area_end -->
@@ -64,22 +42,22 @@
                     <div class="about_info">
                         <div class="section_title mb-20px">
                             <span>About Us</span>
-                            <h3>A Luxuries Hotel <br>
-                                with Nature</h3>
+                            <h3>OurBook,<br>
+                                뭐하는 곳이죠?</h3>
                         </div>
                         <p>Suscipit libero pretium nullam potenti. Interdum, blandit phasellus consectetuer dolor ornare
                             dapibus enim ut tincidunt rhoncus tellus sollicitudin pede nam maecenas, dolor sem. Neque
                             sollicitudin enim. Dapibus lorem feugiat facilisi faucibus et. Rhoncus.</p>
-                        <a href="#" class="line-button">Learn More</a>
+                        <a href="{% url 'about' %}" class="line-button">Learn More</a>
                     </div>
                 </div>
                 <div class="col-xl-7 col-lg-7">
                     <div class="about_thumb d-flex">
                         <div class="img_1">
-                            <img src="img/about/about_1.png" alt="">
+                            <img src="/static/img/about/about_1.png" alt="">
                         </div>
                         <div class="img_2">
-                            <img src="img/about/about_2.png" alt="">
+                            <img src="/static/img/about/about_2.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -87,6 +65,24 @@
         </div>
     </div>
     <!-- about_area_end -->
+
+    <!-- Number Increment Effect-->
+    <div class="offers_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                  <span class='numscroller' data-min='1' data-max='1000' data-delay='5' data-increment='10' style="font-size:100px">1000</span>
+                     권의 책이 공유되고<br/>
+                    솔루션
+                  <span class='numscroller' data-min='1' data-max='1000' data-delay='5' data-increment='10' style="font-size:100px">1000</span>
+                    문제의 해답이 공개되었습니다
+                    <!-- 근데 이렇게 아래 있으면 사람들이 효과를 못 보지 않냐?-->
+                </div>
+            </div>
+        </div>
+    </div>    
+    <!-- End of Increment Effect -->
+
 
     <!-- offers_area_start -->
     <div class="offers_area">
@@ -103,7 +99,7 @@
                 <div class="col-xl-4 col-md-4">
                     <div class="single_offers">
                         <div class="about_thumb">
-                            <img src="img/offers/1.png" alt="">
+                            <img src="/static/img/offers/1.png" alt="">
                         </div>
                         <h3>Up to 35% savings on Club <br>
                             rooms and Suites</h3>
@@ -118,7 +114,7 @@
                 <div class="col-xl-4 col-md-4">
                     <div class="single_offers">
                         <div class="about_thumb">
-                            <img src="img/offers/2.png" alt="">
+                            <img src="/static/img/offers/2.png" alt="">
                         </div>
                         <h3>Up to 35% savings on Club <br>
                             rooms and Suites</h3>
@@ -133,7 +129,7 @@
                 <div class="col-xl-4 col-md-4">
                     <div class="single_offers">
                         <div class="about_thumb">
-                            <img src="img/offers/3.png" alt="">
+                            <img src="/static/img/offers/3.png" alt="">
                         </div>
                         <h3>Up to 35% savings on Club <br>
                             rooms and Suites</h3>
@@ -153,9 +149,9 @@
     <!-- video_area_start -->
     <div class="video_area video_bg overlay">
         <div class="video_area_inner text-center">
-            <span>Montana Sea View</span>
-            <h3>Relax and Enjoy your <br>
-                Vacation </h3>
+            <span>영상으로 보는</span>
+            <h3>OurBook<br>
+                이용안내</h3>
             <a href="https://www.youtube.com/watch?v=vLnPwxZdW4Y" class="video_btn popup-video">
                 <i class="fa fa-play"></i>
             </a>
@@ -163,60 +159,5 @@
     </div>
     <!-- video_area_end -->
 
-    <!-- about_area_start -->
-    <div class="about_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-7 col-lg-7">
-                    <div class="about_thumb2 d-flex">
-                        <div class="img_1">
-                            <img src="img/about/1.png" alt="">
-                        </div>
-                        <div class="img_2">
-                            <img src="img/about/2.png" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-5 col-lg-5">
-                    <div class="about_info">
-                        <div class="section_title mb-20px">
-                            <span>Delicious Food</span>
-                            <h3>We Serve Fresh and <br>
-                                Delicious Food</h3>
-                        </div>
-                        <p>Suscipit libero pretium nullam potenti. Interdum, blandit phasellus consectetuer dolor ornare
-                            dapibus enim ut tincidunt rhoncus tellus sollicitudin pede nam maecenas, dolor sem. Neque
-                            sollicitudin enim. Dapibus lorem feugiat facilisi faucibus et. Rhoncus.</p>
-                        <a href="#" class="line-button">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- about_area_end -->
 
-    <!-- forQuery_start -->
-    <div class="forQuery">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-10 offset-xl-1 col-md-12">
-                    <div class="Query_border">
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-xl-6 col-md-6">
-                                <div class="Query_text">
-                                    <p>For Reservation 0r Query?</p>
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-md-6">
-                                <div class="phone_num">
-                                    <a href="#" class="mobile_no">+10 576 377 4789</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- forQuery_end-->
 {% endblock %}
