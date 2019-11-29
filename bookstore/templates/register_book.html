@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="bradcam_area breadcam_bg">
+    <h3>책 등록</h3>
+</div>
+<div class="container">
+
+{% for elem in final_res.items %}
+<form method="post">
+    {{elem.title|safe }}
+    <br/>
+    <a href="{{elem.link|safe}}">자세히 보기 (링크)</a><br/>
+    <img src="{{elem.image}}"><br/>
+    {{elem.author|safe}}<br/>
+    {{elem.price|safe}}<br/>
+    출판사 : {{elem.publisher|safe}}<br/>
+    {{elem.isbn|safe}}<br/>
+    출판일 : {{elem.pubdate|safe}}
+    {{elem.description|safe}}<br/>
+    <br/><br/>
+    <!-- Title과 ISBN을 같이 넘기기. Title로 한 번 목록 검색 후 ISBN 일치하는 걸 필터링-->
+    <a href="{% url 'new_book' %}">책선택</a>
+    {{elem}}
+    <!-- 여기서 elem 을 그대로 detail 페이지로 넘길 수 있을가 -->
+{%endfor%}
+</div>
+
+    {% endblock %}
+

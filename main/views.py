@@ -26,7 +26,7 @@ def home(request):
 
             json_rt = response_body.decode('utf-8')
             final_res = json.loads(json_rt)
-            return render(request, 'books.html', {'final_res':final_res})
+            return render(request, 'register_book.html', {'final_res':final_res})
         
         else:
             # print("Error Code:" + rescode)
@@ -41,3 +41,4 @@ def about(request):
 
 def contact(request):
     return render(request, 'contact.html')
+

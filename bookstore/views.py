@@ -1,6 +1,8 @@
 from django.shortcuts import render
 import urllib.request
 import json
+from django.urls import reverse_lazy
+
 
 def books(request):
     
@@ -30,8 +32,7 @@ def books_list(request):
 
     if request.method == 'POST':
         
-        keyword = request.POST['book_search'] # form의 이름이 quote였으니까.
-        
+        keyword = request.POST.get('book_search', '') # form의 이름이 quote였으니까.
         client_id = "CJNbcDFvgOnPbjtdXxA_"  # Client-Id
         client_secret = "6EdIJ7Pe2d"        # Client-Secret
         encText = urllib.parse.quote(keyword)
@@ -66,3 +67,7 @@ def books_list(request):
         return render(request, 'book_list.html', {}) 
 
     return render(request, 'book_list.html')
+
+def new_book(request):
+
+    return render(request, 'save_book.html')
