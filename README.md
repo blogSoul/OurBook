@@ -1,6 +1,6 @@
 # OurBook
 <p align="center">
-<img src="main/static/img/logo.png" width="65%" alt="ourbook">
+<img src="main/static/img/logo.png" width="55%" alt="ourbook">
 </p>
 
 ## 요약
