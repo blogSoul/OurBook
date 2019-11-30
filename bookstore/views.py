@@ -17,7 +17,6 @@ class BookList(LoginRequiredMixin, ListView):
     redirect_field_name = '/'
 
     model = Product
-    paginate_by = 10
 
 class BookCreate(LoginRequiredMixin, CreateView):
     login_url = '/'

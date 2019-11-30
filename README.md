@@ -14,6 +14,13 @@
 
 P2P 전공서적/솔루션 공유 플랫폼
 
+시연 영상 (추후 업데이트 예정)
+- https://youtu.be/3hVZYmFhyBs
+- https://youtu.be/ZyNfSfm2cH8
+- https://youtu.be/ZJAOtyb7pI0
+- https://youtu.be/zUIM8_O_qBk
+- https://youtu.be/cWwOtRlWT2o
+
 ## 문제의식 
 
 서울시 전공서적 구매를 위해 소비되는 대학생들의 경제적 지출은 880억에 이르며,   
