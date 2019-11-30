@@ -28,7 +28,17 @@ INSTALLED_APPS = [
     'accounts',
     'main',
     'bookstore',
+    'solutions',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
+
+SITE_ID = 1 
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+#CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+#CKEDITOR_IMAGE_BACKEND = "pillow"
+#CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -115,3 +125,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#STATIC_ROOT = 'ide/static', 'dash/static', 'accounts/static'
+STATIC_ROOT = 'staticfiles/'
+
+MEDIA_URL = '/media/'
+#MEDIA_ROOT = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
