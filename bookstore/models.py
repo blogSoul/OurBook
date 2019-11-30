@@ -34,13 +34,20 @@ class Product(models.Model):
 
     exchange_method = (
         ("일반거래", "일반거래"),
-        ("안심거래", "안심거래"),
+        ("중개거래", "중개거래"),
     )
 
     user = models.ForeignKey(MyUser, on_delete = models.CASCADE, null=True)
-    book = models.ForeignKey(UserBook, on_delete = models.CASCADE, null=True)
-    note = models.CharField(max_length=255)
-    ex_type = models.CharField(max_length=10, choices=exchange_type, default="양도")               # 대여, 양도, 판대
-    state = models.CharField(max_length=10, choices=book_state, default="unavailable")                  # 판매 완료
-    exc_method = models.CharField(max_length=10, choices=exchange_method, default="일반거래")             # 안심거래, 일반거래 
-    price = models.CharField(max_length=100, blank=True)
+    
+    # 사용자가 이걸 입력하는 게 좀 귀찮을 거 같은데
+    book_title = models.CharField(max_length=255, blank=False, null=False, default="")
+    isbn = models.CharField(max_length=255, blank=False, null=False, default="")
+    
+    note = models.CharField(max_length=255)     # 부가 정보
+    ex_type = models.CharField(max_length=10, choices=exchange_type, default="양도")   # 대여, 양도, 판대
+    state = models.CharField(max_length=10, choices=book_state, default="unavailable")   # 판매 완료
+    exc_method = models.CharField(max_length=10, choices=exchange_method, default="일반거래")   # 안심거래, 일반거래 
+    price = models.CharField(max_length=100, blank=True)   # 가격
+
+    def __str__(self):
+        return self.book_title

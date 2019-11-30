@@ -3,12 +3,63 @@
 
   <!-- bradcam_area_start -->
   <div class="bradcam_area breadcam_bg">
-      <h3>책 검색</h3>
+      <h3>책 나누기</h3>
   </div>
-  <!-- bradcam_area_end -->
-    책 : {{form.book}}<br/>
-    메모 : {{form.note}}<br/>
-    거래 방식 : {{form.ex_type}}<br/>
-    (올린 사람만 변경) 상태 : {{form.state}}<br/>
-    거래 방법 : {{form.exec_method}}<br/>
+
+	<!-- Start Align Area -->
+	<div class="whole-wrap">
+		<div class="container box_1170">		
+			<div class="section-top-border">
+				<div class="row">
+					<div class="col-lg-8 col-md-8">
+						<h3 class="mb-30">도서 기본정보 등록</h3>
+    
+          <form  method="post" action="#">
+          {%csrf_token%}
+            <div class="input-group-icon mt-10">
+								<div class="icon"></div>
+								<input type="text" name="book_title" placeholder="title" required id="id_book_title" maxlength="255" class="single-input">
+						</div><br/>
+
+            <div class="input-group-icon mt-10">
+								<div class="icon"></div>
+								<input type="text" name="isbn" placeholder="ISBN (- 뺴고 입력)" required id="id_isbn" maxlength="255" class="single-input">
+						</div><br/>
+
+            <div class="input-group-icon mt-10">
+								<div class="icon"></div>
+								<textarea type="text" name="note" placeholder="메세지" required id="id_note" maxlength="255" class="single-input"></textarea>
+						</div><br/>
+
+					</div>
+					<div class="col-lg-3 col-md-4 mt-sm-30">
+						<div class="single-element-widget">
+							<h3 class="mb-30">거래 방식</h3>
+							<div class="switch-wrap d-flex justify-content-between">
+								<p>물품 성격</p>
+								<div class="primary-switch">
+                {{form.ex_type}}
+								</div>
+							</div>
+							<div class="switch-wrap d-flex justify-content-between">
+								<p>거래 방식</p>
+								<div class="primary-switch">
+                {{form.exc_method}}
+								</div>
+							</div>
+						</div>
+
+						<div class="single-element-widget mt-30">
+							<h3 class="mb-30">최종 제출 </h3>
+							<div>
+								<p>제목, ISBN을 최종 확인셨나요?</p>
+							</div>
+              <input type = "submit" value ="추가" onclick="return confirm('새 책이 등록되었습니다')" class="genric-btn success">
+          </form>  
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Align Area -->
 {% endblock%}

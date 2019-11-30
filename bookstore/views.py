@@ -24,7 +24,7 @@ class BookCreate(LoginRequiredMixin, CreateView):
     redirect_field_name = '/'
 
     model = Product
-    fields = ['book', 'note', 'ex_type', 'state', 'exc_method']
+    fields = ['book_title', 'isbn' ,'note', 'ex_type', 'exc_method']
     success_url = reverse_lazy('book_list')
     
     def form_valid(self, form):
