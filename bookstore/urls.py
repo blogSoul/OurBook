@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.books , name="books"),
+    path('', views.books , name="books"),       # 팩 검색
     path('new/', views.new_book, name="new_book"),
 
     path('booklist/', views.BookList.as_view(), name="book_list"),

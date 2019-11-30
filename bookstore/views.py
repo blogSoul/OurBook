@@ -51,16 +51,18 @@ class BookDelete(LoginRequiredMixin, DeleteView):
 
 #############################################################3
 
+# 책 검색
 def books(request):
 
     if request.method == 'POST':
         
-        keyword = request.POST.get('book_search', '') # form의 이름이 quote였으니까.
+        keyword = request.POST.get('book_search', '') 
         client_id = "CJNbcDFvgOnPbjtdXxA_"  # Client-Id
         client_secret = "6EdIJ7Pe2d"        # Client-Secret
         encText = urllib.parse.quote(keyword)
         
-        url = "https://openapi.naver.com/v1/search/book?query=" + encText +"&display=3&sort=count" # 우선은 3씩, 판매량 순
+        # 우선은 3씩, 판매량 순
+        url = "https://openapi.naver.com/v1/search/book?query=" + encText +"&display=10&sort=count" 
         request_content = urllib.request.Request(url)
         
         request_content.add_header("X-Naver-Client-Id", client_id)

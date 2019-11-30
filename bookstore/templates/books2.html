@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="bradcam_area breadcam_bg">
+    <h3>책 검색</h3>
+</div>
+<div class="container">
+
+    {% for x in final_res.items %}
+    <h1>{{x.title|safe }}</h1>
+    <br/>
+    <a href="{{x.link|safe}}">자세히 보기 (링크)</a><br/>
+    <img src="{{x.image}}"><br/>
+    {{x.author|safe}}<br/>
+    {{x.price|safe}}<br/>
+    출판사 : {{x.publisher|safe}}<br/>
+    {{x.isbn|safe}}<br/>
+    출판일 : {{x.pubdate|safe}}
+    {{x.description|safe}}<br/>
+    <br/><br/>
+    {%endfor%}
+</div>
+
+    {% endblock %}
+
